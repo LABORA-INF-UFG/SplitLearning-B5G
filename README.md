@@ -1,9 +1,8 @@
 # SplitLearning-B5G
 
-<p align='center' style="margin-bottom: -4px">Cleyber B. dos Reis<sup>1</sup>, Victor Hugo L.Lopes<sup>2</sup>, Antonio Oliveira-JR<sup>2</sup></p>
+<p align='center' style="margin-bottom: -4px">Cleyber B. dos Reis<sup>1</sup>, Maria do Rosário C. Ribeiro <sup>1</sup>, Antonio Oliveira-JR<sup>1</sup></p>
 <p align='center'style="margin-bottom: -4px"><sup>1</sup>Universidade Federal de Goiás - Goiânia, GO - Brazil</p>
-<p align='center' style="margin-bottom: -4px"><sup>2</sup>Instituto Federal de Goiás - Inhumas, GO - Brazil</p>
-<p align='center' style="margin-bottom: -4px">cleyber.bezerra@discente.ufg.br, victor.lopes@ifg.edu.br, antonio@inf.ufg.br</p>
+<p align='center' style="margin-bottom: -4px">cleyber.bezerra@discente.ufg.br, rosario.ribeiro@ufg.br, antonio@inf.ufg.br</p>
 
 # Description
 The repository contains all the development related to the master's dissertation entitled "Split Learning as an enabler of wireless networks for future generations". Being developed through the Academic Master's Course in Computer Science - Goiânia, by the Institute of Informatics (INF) of the Federal University of Goiás (UFG).
