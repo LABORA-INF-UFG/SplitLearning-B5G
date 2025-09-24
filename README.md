@@ -4,8 +4,9 @@
 <p align='center'style="margin-bottom: -4px"><sup>1</sup>Universidade Federal de Goiás - Goiânia, GO - Brazil</p>
 <p align='center' style="margin-bottom: -4px">cleyber.bezerra@discente.ufg.br, rosario.ribeiro@ufg.br, antonio@inf.ufg.br</p>
 
-# Description
-The repository contains all the development related to the master's dissertation entitled "Split Learning as an enabler of wireless networks for future generations". Being developed through the Academic Master's Course in Computer Science - Goiânia, by the Institute of Informatics (INF) of the Federal University of Goiás (UFG).
+The repository hosts the full development carried out for the master’s dissertation Split Learning as an enabler of wireless networks for future generations, undertaken within the Academic Master’s Programme in Computer Science at the Institute of Informatics (INF), Federal University of Goiás (UFG), Goiânia.
+
+Beyond serving as the dissertation’s experimental foundation, the repository also contains the implementation of SplitLearning-ns3, the network-aware Split Learning architecture introduced in the article SLArch: A Network Metric-aware Split Learning Architecture for B5G/6G Mobile Networks. This framework bridges wireless communication metrics — latency, throughput, jitter, packet loss rate, and energy consumption — with distributed training processes. In doing so, it enables reproducible and extensible experimentation in B5G/6G scenarios, providing both a research tool and a reference point for future studies.
 
 # Table of Contents
 - [Article Summary](#getting-started)
@@ -19,63 +20,68 @@ The repository contains all the development related to the master's dissertation
 
 
 ## Abstract
+This paper introduces SplitLearning-ns3, a network-aware Split Learning (SL) architecture developed on top of ns3-ai for the NS-3 simulator (5G-LENA). More than a simple integration, SplitLearning-ns3 provides a reproducible and extensible framework that couples wireless communication metrics with distributed training processes. The experimental protocol subjects Convolutional Neural Network (CNN) training to realistic network dynamics—including latency, throughput, jitter, packet loss rate (PLR), and energy consumption—that characterise Beyond 5G (B5G) and 6G environments.
 
-Split Learning (SL) is an innovative and effective approach to address security and privacy concerns in the training of deep neural networks (DNN). This technique combines the protection of raw data with the division of the model between client devices and a central server, significantly reducing the risks of data leaks and cyberattacks. In addition, it enables the training of deep neural networks on devices with limited computational resources.
-
-However, splitting the model leads to an increase in the communication flow between the distributed devices and the central server, which can not only generate a communication overhead in environments with computational constraints, but also negatively impact the training accuracy, compromising the final results of the model.
-
-This paper covers the inference problem of improving accuracy. Through a case study of integrating (ns3-ai) with distributed Split Learning to train a Convolutional Neural Network (CNN) and MNIST dataset. The NS3-LENA simulator used the characteristics of a B5G network environment with mobile devices (UE) and a gNB (5G access module).
-
-In this integrated scenario, network experiments were simulated with distance variations between 200 mt. With powers of 13 and 26 dBm and loss exponents of 2, 3 and 4 dB. Based on the network output results, with regard to latency, a policy was defined that values above 10 seconds are considered timeouts and are not included in machine learning experiments. With the objective of training and testing the split learning model, the impacts of changes in the network simulation on training accuracy were observed.
-
+The results show that PLR is the dominant factor hindering convergence, whereas latency and throughput have a moderate influence, and jitter and energy consumption remain secondary though still measurable. Slice-level analysis further reveals that URLLC consistently ensures lower latency, while eMBB captures the largest share of throughput. These findings highlight the decisive importance of link reliability and energy awareness in evaluating the feasibility of SL for next-generation mobile networks, and motivate further research into resilient and energy-efficient learning at the wireless edge.
 
 [Back to TOC](#table-of-contents)
 
 ## Baselines
 
-The methods defined as baselines for our proposal are: (1) the use of the synchronous algorithm in the training of the Split Learning Vanilla model and (2) the definition of the training based on events provided by the simulation in NS3, following the latency policy established in 15 distinct seeds for each exponent. In the simulation, six (06) mobile devices and the base station are considered, with the policy defined for network latency stipulating nodes with latency below 23 seconds.
+In this study, the baselines are defined by a reproducible experimental protocol implemented in SplitLearning-ns3. A single CNN model (MNIST) is trained across client–server partitions, with network dynamics injected from ns-3/5G-LENA. The baseline simulation considers two gNBs and 102 UEs operating under heterogeneous slices (URLLC, eMBB, and mMTC), with numerologies µ = 4 and µ = 2, a 100 MHz bandwidth, On–Off traffic, and transmission powers of 26 dBm (gNBs) and 13 dBm (UEs).
+
+Both network metrics (latency, jitter, throughput, PLR, and energy consumption) and ML outcomes (validation accuracy and training time) are assessed jointly. Within this baseline, packet loss rate (PLR) emerges as the dominant constraint, outweighing delay and throughput, which contribute meaningfully only once link reliability is ensured.
 
 [Back to TOC](#table-of-contents)
 
 ## Results
-### Results in the communication network environment.
+### Results in the communication network and Split Learning environment.
 
-Demonstrations of results within the scope of network simulation, in two different scenarios, graphically presenting: latencies, througput, packet loss rates and energy consumption.
+The proposed framework couples network simulation with distributed training, enabling the joint evaluation of metrics such as latency, throughput, jitter, packet loss rate (PLR), energy consumption, and validation accuracy. Results are presented below for heterogeneous slices (URLLC, eMBB, and mMTC).
 
 <div style="display: flex; justify-content: center; align-items: center;">
     <div style="text-align: center; margin-right: 20px;">
-        <img src="/images/graficoAtrasos.png" width="550">
-        <figcaption>Fig. 1. Latency.</figcaption>
+        <img src="/images/graficoLatency.png" width="550">
+        <figcaption>Fig. 1. Latency distribution by slice (URLLC, eMBB, mMTC).</figcaption>
     </div>
     <div style="text-align: center;">
-        <img src="/images/graficoVazao.png" width="550">
-        <figcaption>Fig. 2. Throughput.</figcaption>
+        <img src="/images/graficoThroughput.png" width="550">
+        <figcaption>Fig. 2. Throughput share and stability across slices.</figcaption>
     </div>
 </div>
 
-
-Figures 1 and 2 show the latency and throughput results in the network simulation.
-
+    Figures 1 and 2 reveal that URLLC achieved the lowest latency owing to prioritised scheduling, while eMBB absorbed the majority of throughput (≈79% of capacity). 
+    mMTC, although contributing little to throughput, generated bursts that increased delay variability.
 
 <div style="display: flex; justify-content: center; align-items: center;">
     <div style="text-align: center; margin-right: 20px;">
-        <img src="/images/graficoPerda.png" width="550">
-        <figcaption>Fig. 3. Packet Loss.</figcaption>
+        <img src="/images/graficoJitter.png" width="550">
+        <figcaption>Fig. 3. Jitter behaviour under bursty mMTC traffic.</figcaption>
     </div>
     <div style="text-align: center;">
+        <img src="/images/graficoPLR.png" width="550">
+        <figcaption>Fig. 4. Impact of Packet Loss Rate (PLR) on SL convergence.</figcaption>
+    </div>
+</div>
+
+    Figures 3 and 4 indicate that jitter alone had only a modest effect, but became critical when combined with PLR. 
+    Even small losses (PLR < 2%) sharply reduced validation accuracy, confirming reliability as the decisive factor.
+
+<div style="display: flex; justify-content: center; align-items: center;">
+    <div style="text-align: center; margin-right: 20px;">
         <img src="/images/graficoEnergia.png" width="550">
-        <figcaption>Fig. 4. Energy Consumed .</figcaption>
+        <figcaption>Fig. 5. Energy consumption across slices.</figcaption>
+    </div>
+    <div style="text-align: center;">
+        <img src="/images/graficoAccuracy.png" width="550">
+        <figcaption>Fig. 6. Validation accuracy as a function of delay and PLR.</figcaption>
     </div>
 </div>
 
-Figures 3 and 4 show the results of packet loss and energy consumption in the network simulation.
+    Figures 5 and 6 demonstrate that energy consumption remained largely stable across profiles, whereas accuracy was highly sensitive to reliability. 
+    PLR led to accuracy degradation of up to −70.1%, overshadowing the influence of delay (+57.6%) and throughput (+12.2%). 
+    These findings confirm that **link reliability is the cornerstone of stable Split Learning in B5G/6G environments**.
 
-<div style="text-align: center; margin-right: 20px;">
-    <img src="/images/graficoAcuracia.png" width="550">
-    <figcaption>Fig. 5. Accuracy.</figcaption>
-</div>
-
-Figure 5 shows the accuracy result in training.
 
 [Back to TOC](#table-of-contents)
 
@@ -109,7 +115,7 @@ Figure 5 shows the accuracy result in training.
 	python --version
 	python3 --version
   ```
-- [ns-allinone (3.42)](https://www.nsnam.org/releases/ns-3-42/download/ ) or [ns-3-dev](https://gitlab.com/nsnam/ns-3-dev/ )
+- [ns-allinone (3.45)](https://www.nsnam.org/releases/ns-3-45/download/ ) or [ns-3-dev](https://gitlab.com/nsnam/ns-3-dev/ )
   
 [Back to TOC](#table-of-contents)
 
@@ -146,14 +152,14 @@ INSTALL THE GIT
 ```bash
     sudo apt-get install git -y
 ```
-INSTALL THE NS-3-DEV
+INSTALL THE NS-3.45
 ```bash
-    git clone https://gitlab.com/nsnam/ns-3-dev.git
-    git checkout -b ns-3.43-release ns-3.43
+    git clone https://gitlab.com/nsnam/ns-3.45.git
+    git checkout -b ns-3.45-release ns-3.45
 ```
 CONFIGURE AND COMPILE NS-3
 
-In the ns-3-dev folder use the commands:
+In the ns-3.45 folder use the commands:
 ```bash
     ./ns3 configure --enable-examples --enable-tests
     ./ns3 build
@@ -207,9 +213,9 @@ ENABLE MODULES
 
 DOWNLOAD PROJECT
 
-inside the ns-3-dev/scratch folder use the commands:
+inside the ns-3.45/scratch folder use the commands:
 ```bash
-git clone https://github.com/cleyber-bezerra/SplitLearning-B5G.git
+git clone https://github.com/LABORA-INF-UFG/SplitLearning-B5G.git
 ```
 [Back to TOC](#table-of-contents)
 
