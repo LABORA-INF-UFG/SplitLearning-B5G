@@ -42,11 +42,11 @@ The proposed framework integrates network simulation with distributed training, 
 <div style="display: flex; justify-content: center; align-items: center;">
     <div style="text-align: center; margin-right: 20px;">
         <img src="/images/fig1.png" width="550">
-        <figcaption>Fig. 1. Latency distribution by slice (URLLC, eMBB, mMTC).</figcaption>
+        <figcaption>Fig. 1. Latency distribution across slices (URLLC, eMBB, mMTC; 95% CI).</figcaption>
     </div>
     <div style="text-align: center;">
         <img src="/images/fig2.png" width="550">
-        <figcaption>Fig. 2. Throughput share and stability across slices.</figcaption>
+        <figcaption>Fig. 2. Average throughput and stability across slices (95% CI).</figcaption>
     </div>
 </div>
 
@@ -55,11 +55,11 @@ Figures 1 and 2 show that **URLLC consistently achieved the lowest latency** due
 <div style="display: flex; justify-content: center; align-items: center;">
     <div style="text-align: center; margin-right: 20px;">
         <img src="/images/fig3.png" width="550">
-        <figcaption>Fig. 3. Jitter behaviour under bursty mMTC traffic.</figcaption>
+        <figcaption>Fig. 3. Jitter dynamics under bursty mMTC traffic (95% CI).</figcaption>
     </div>
     <div style="text-align: center;">
         <img src="/images/fig4.png" width="550">
-        <figcaption>Fig. 4. Impact of Packet Loss Rate (PLR) on SL convergence.</figcaption>
+        <figcaption>Fig. 4. Validation accuracy versus Packet Loss Rate (PLR) (mean ± 95% CI).</figcaption>
     </div>
 </div>
 
@@ -68,11 +68,11 @@ Figures 3 and 4 highlight that jitter alone had a limited impact, but became cri
 <div style="display: flex; justify-content: center; align-items: center;">
     <div style="text-align: center; margin-right: 20px;">
         <img src="/images/fig5.png" width="550">
-        <figcaption>Fig. 5. Energy consumption across slices.</figcaption>
+        <figcaption>Fig. 5. Average energy consumption across slices (95% CI).</figcaption>
     </div>
     <div style="text-align: center;">
         <img src="/images/fig6.png" width="550">
-        <figcaption>Fig. 6. Validation accuracy as a function of delay and PLR.</figcaption>
+        <figcaption>Fig. 6. Normalised slice profiles across network metrics (↑ better for Throughput; ↓ preferable for Latency, Jitter, PLR, and Energy).</figcaption>
     </div>
 </div>
 
@@ -226,4 +226,5 @@ inside the Split Learning folder run the script file.
 ```
 
 [Back to TOC](#table-of-contents)
+
 
