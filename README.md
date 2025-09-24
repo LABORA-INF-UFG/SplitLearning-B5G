@@ -42,7 +42,9 @@ The proposed framework integrates network simulation with distributed training, 
 <div style="display: flex; justify-content: center; align-items: center;">
     <div style="text-align: center; margin-right: 20px;">
         <img src="/images/fig1.png" width="550">
-        <figcaption>Fig. 1. Latency distribution across slices (URLLC, eMBB, mMTC; 95% CI).</figcaption>
+        <figcaption style="display:block; margin-top: 6px;">
+			Fig. 1. Latency distribution across slices (URLLC, eMBB, mMTC; 95% CI).
+		</figcaption>
     </div>
     <div style="text-align: center;">
         <img src="/images/fig2.png" width="550">
