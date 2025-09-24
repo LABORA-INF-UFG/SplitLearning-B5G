@@ -35,9 +35,9 @@ Both network metrics (latency, jitter, throughput, PLR, and energy consumption) 
 [Back to TOC](#table-of-contents)
 
 ## Results
-### Results in the communication network and Split Learning environment.
+### Communication network and Split Learning environment
 
-The proposed framework couples network simulation with distributed training, enabling the joint evaluation of metrics such as latency, throughput, jitter, packet loss rate (PLR), energy consumption, and validation accuracy. Results are presented below for heterogeneous slices (URLLC, eMBB, and mMTC).
+The proposed framework integrates network simulation with distributed training, enabling a joint analysis of key metrics such as **latency, throughput, jitter, packet loss rate (PLR), energy consumption, and validation accuracy**. Results are presented for heterogeneous slices (URLLC, eMBB, and mMTC).
 
 <div style="display: flex; justify-content: center; align-items: center;">
     <div style="text-align: center; margin-right: 20px;">
@@ -50,8 +50,7 @@ The proposed framework couples network simulation with distributed training, ena
     </div>
 </div>
 
-    Figures 1 and 2 reveal that URLLC achieved the lowest latency owing to prioritised scheduling, while eMBB absorbed the majority of throughput (≈79% of capacity). 
-    mMTC, although contributing little to throughput, generated bursts that increased delay variability.
+Figures 1 and 2 show that **URLLC consistently achieved the lowest latency** due to prioritised scheduling, while **eMBB dominated throughput allocation (≈79% of total capacity)**. Although mMTC contributed little in terms of throughput, it introduced traffic bursts that increased delay variability.
 
 <div style="display: flex; justify-content: center; align-items: center;">
     <div style="text-align: center; margin-right: 20px;">
@@ -64,8 +63,7 @@ The proposed framework couples network simulation with distributed training, ena
     </div>
 </div>
 
-    Figures 3 and 4 indicate that jitter alone had only a modest effect, but became critical when combined with PLR. 
-    Even small losses (PLR < 2%) sharply reduced validation accuracy, confirming reliability as the decisive factor.
+Figures 3 and 4 highlight that jitter alone had a limited impact, but became critical when combined with PLR. Even small losses (**PLR < 2%**) caused a sharp reduction in validation accuracy, confirming **reliability as a decisive factor** for convergence.
 
 <div style="display: flex; justify-content: center; align-items: center;">
     <div style="text-align: center; margin-right: 20px;">
@@ -78,10 +76,9 @@ The proposed framework couples network simulation with distributed training, ena
     </div>
 </div>
 
-    Figures 5 and 6 demonstrate that energy consumption remained largely stable across profiles, whereas accuracy was highly sensitive to reliability. 
-    PLR led to accuracy degradation of up to −70.1%, overshadowing the influence of delay (+57.6%) and throughput (+12.2%). 
-    These findings confirm that **link reliability is the cornerstone of stable Split Learning in B5G/6G environments**.
+Figures 5 and 6 demonstrate that **energy consumption remained stable across slices**, with only minor variations, while **validation accuracy was highly sensitive to network reliability**. PLR degraded accuracy by up to −70.1%, overshadowing the effects of delay (+57.6%) and throughput (+12.2%).  
 
+**Key insight:** These results confirm that **link reliability is the cornerstone for ensuring stable Split Learning in B5G/6G environments**.
 
 [Back to TOC](#table-of-contents)
 
