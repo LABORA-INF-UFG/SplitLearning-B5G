@@ -47,7 +47,7 @@ The proposed framework integrates network simulation with distributed training, 
 		</figcaption>
     </div>
     <div style="text-align: center;">
-        <img src="/images/fig2.png" width="550">
+        <img src="/images/fig2.png" width="550"><br>
         <figcaption>Fig. 2. Average throughput and stability across slices (95% CI).</figcaption>
     </div>
 </div>
@@ -56,11 +56,11 @@ Figures 1 and 2 show that **URLLC consistently achieved the lowest latency** due
 
 <div style="display: flex; justify-content: center; align-items: center;">
     <div style="text-align: center; margin-right: 20px;">
-        <img src="/images/fig3.png" width="550">
+        <img src="/images/fig3.png" width="550"><br>
         <figcaption>Fig. 3. Jitter dynamics under bursty mMTC traffic (95% CI).</figcaption>
     </div>
     <div style="text-align: center;">
-        <img src="/images/fig4.png" width="550">
+        <img src="/images/fig4.png" width="550"><br>
         <figcaption>Fig. 4. Validation accuracy versus Packet Loss Rate (PLR) (mean ± 95% CI).</figcaption>
     </div>
 </div>
@@ -69,7 +69,7 @@ Figures 3 and 4 highlight that jitter alone had a limited impact, but became cri
 
 <div style="display: flex; justify-content: center; align-items: center;">
     <div style="text-align: center; margin-right: 20px;">
-        <img src="/images/fig5.png" width="550">
+        <img src="/images/fig5.png" width="550"><br>
         <figcaption>Fig. 5. Average energy consumption across slices (95% CI).</figcaption>
     </div>
     <div style="text-align: center;">
