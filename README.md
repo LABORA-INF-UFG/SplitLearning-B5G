@@ -41,11 +41,11 @@ The proposed framework couples network simulation with distributed training, ena
 
 <div style="display: flex; justify-content: center; align-items: center;">
     <div style="text-align: center; margin-right: 20px;">
-        <img src="/images/graficoLatency.png" width="550">
+        <img src="/images/fig1.png" width="550">
         <figcaption>Fig. 1. Latency distribution by slice (URLLC, eMBB, mMTC).</figcaption>
     </div>
     <div style="text-align: center;">
-        <img src="/images/graficoThroughput.png" width="550">
+        <img src="/images/fig2.png" width="550">
         <figcaption>Fig. 2. Throughput share and stability across slices.</figcaption>
     </div>
 </div>
@@ -55,11 +55,11 @@ The proposed framework couples network simulation with distributed training, ena
 
 <div style="display: flex; justify-content: center; align-items: center;">
     <div style="text-align: center; margin-right: 20px;">
-        <img src="/images/graficoJitter.png" width="550">
+        <img src="/images/fig3.png" width="550">
         <figcaption>Fig. 3. Jitter behaviour under bursty mMTC traffic.</figcaption>
     </div>
     <div style="text-align: center;">
-        <img src="/images/graficoPLR.png" width="550">
+        <img src="/images/fig4.png" width="550">
         <figcaption>Fig. 4. Impact of Packet Loss Rate (PLR) on SL convergence.</figcaption>
     </div>
 </div>
@@ -69,11 +69,11 @@ The proposed framework couples network simulation with distributed training, ena
 
 <div style="display: flex; justify-content: center; align-items: center;">
     <div style="text-align: center; margin-right: 20px;">
-        <img src="/images/graficoEnergia.png" width="550">
+        <img src="/images/fig5.png" width="550">
         <figcaption>Fig. 5. Energy consumption across slices.</figcaption>
     </div>
     <div style="text-align: center;">
-        <img src="/images/graficoAccuracy.png" width="550">
+        <img src="/images/fig6.png" width="550">
         <figcaption>Fig. 6. Validation accuracy as a function of delay and PLR.</figcaption>
     </div>
 </div>
